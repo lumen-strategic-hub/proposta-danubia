@@ -177,25 +177,67 @@
   }
 </style>
 <style>
-  .models.dois { grid-template-columns: repeat(2, 1fr); max-width: 760px; margin: 0 auto; }
-  .model.hi { background: var(--bg-card-hi); border-color: rgba(201,169,110,0.35); }
-  .bonus {
-    max-width: 760px; margin: 22px auto 0; padding: 26px 28px; text-align: center;
-    background: var(--accent-soft); border: 1px solid rgba(201,169,110,0.4); border-radius: 20px;
-    animation: fadeUp .8s ease-out .34s both;
+  .bloco { margin-bottom: 56px; animation: fadeUp .8s ease-out both; }
+  .bloco-head { text-align: center; margin-bottom: 30px; }
+  .bloco-head .section-label { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+  .bloco-head h2 { font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 600; color: var(--white); margin-bottom: 8px; }
+  .bloco-head p { font-size: 14px; color: var(--text-soft); max-width: 560px; margin: 0 auto; }
+
+  /* caminho */
+  .caminho { list-style: none; display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; position: relative; }
+  .caminho::before { content: ""; position: absolute; top: 22px; left: 10%; right: 10%; height: 1px; background: rgba(201,169,110,0.35); }
+  .passo { position: relative; text-align: center; }
+  .passo .num {
+    width: 44px; height: 44px; margin: 0 auto 16px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; position: relative; z-index: 1;
+    background: var(--bg); border: 1px solid var(--accent); color: var(--accent);
+    font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600;
   }
-  .bonus .tag {
-    display: inline-block; padding: 6px 14px; margin-bottom: 12px; border: 1px solid var(--border);
-    border-radius: 100px; font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
-    color: var(--accent); font-weight: 500; background: var(--bg-card);
+  .passo h3 { font-family: 'Cormorant Garamond', serif; font-size: 19px; font-weight: 600; color: var(--white); line-height: 1.25; margin-bottom: 8px; }
+  .passo p { font-size: 12.5px; color: var(--text-soft); line-height: 1.6; }
+
+  /* ancoragem */
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 14px; }
+  .stat { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 24px 18px; text-align: center; }
+  .stat .lbl { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+  .stat .big { font-family: 'Cormorant Garamond', serif; font-size: 36px; font-weight: 700; color: var(--white); line-height: 1.1; }
+  .clientes { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+  .cliente { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 14px 10px; text-align: center; }
+  .cliente .h { font-size: 13px; color: var(--text); font-weight: 500; overflow-wrap: anywhere; }
+  .cliente .n { font-size: 11px; color: var(--text-muted); }
+
+  /* oferta */
+  .oferta { max-width: 620px; margin: 0 auto; }
+  .model.solo { background: var(--bg-card-hi); border-color: rgba(201,169,110,0.35); }
+  .model .parcela { font-family: 'Cormorant Garamond', serif; font-size: 20px; color: var(--accent); margin-bottom: 2px; }
+  .model .avista { font-size: 13px; color: var(--text-soft); margin-top: 10px; }
+  .model .avista strong { color: var(--text); font-weight: 500; }
+  .upgrade {
+    margin-top: 16px; padding: 22px 24px; border: 1px dashed rgba(201,169,110,0.45); border-radius: 16px;
+    display: flex; gap: 18px; align-items: center; justify-content: space-between;
   }
-  .bonus h3 {
-    font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 600;
-    color: var(--white); line-height: 1.2; margin-bottom: 8px;
-  }
+  .upgrade .t { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
+  .upgrade h3 { font-family: 'Cormorant Garamond', serif; font-size: 21px; font-weight: 600; color: var(--white); line-height: 1.25; margin-bottom: 4px; }
+  .upgrade p { font-size: 13px; color: var(--text-soft); }
+  .upgrade .v { font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 700; color: var(--white); white-space: nowrap; }
+  .upgrade .v span { font-size: .5em; color: var(--accent); font-weight: 400; vertical-align: super; margin-right: 3px; }
+
+  .bonus { margin: 22px auto 0; max-width: 620px; padding: 26px 28px; text-align: center; background: var(--accent-soft); border: 1px solid rgba(201,169,110,0.4); border-radius: 20px; }
+  .bonus .tag { display: inline-block; padding: 6px 14px; margin-bottom: 12px; border: 1px solid var(--border); border-radius: 100px; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); font-weight: 500; background: var(--bg-card); }
+  .bonus h3 { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 600; color: var(--white); line-height: 1.25; margin-bottom: 8px; }
   .bonus h3 em { color: var(--accent); font-style: italic; font-weight: 400; }
-  .bonus p { font-size: 14px; color: var(--text-soft); max-width: 560px; margin: 0 auto; line-height: 1.7; }
+  .bonus p { font-size: 14px; color: var(--text-soft); line-height: 1.7; }
   .bonus p strong { color: var(--text); font-weight: 500; }
+
+  @media (max-width: 880px) {
+    .caminho { grid-template-columns: 1fr; gap: 0; }
+    .caminho::before { top: 22px; bottom: 22px; left: 21px; right: auto; width: 1px; height: auto; }
+    .passo { text-align: left; display: grid; grid-template-columns: 44px 1fr; column-gap: 16px; padding-bottom: 22px; }
+    .passo .num { margin: 0; grid-row: span 2; }
+    .stats { grid-template-columns: 1fr; }
+    .clientes { grid-template-columns: 1fr 1fr; }
+    .upgrade { flex-direction: column; align-items: flex-start; }
+  }
 </style>
 </head>
 <body>
@@ -209,82 +251,86 @@
   <div class="header">
     <div class="brand">Lumen Strategic Hub</div>
     <h1>Consultoria de <em>Esteira</em> de Produtos</h1>
-    <p class="subtitle">Para a Danubia. O desenho do seu negócio, pronto em 7 dias úteis, sem precisar parar a sua agenda.</p>
+    <p class="subtitle">Para a Danubia. O desenho do seu negócio, apresentado em até 7 dias úteis, sem precisar parar a sua agenda.</p>
   </div>
 
   <div class="valor">
     <p class="abertura">Antes de alavancar o Instagram, é preciso saber o que ele vai vender. Com uma esteira clara, cada post tem para onde levar, e o propósito de empoderar mulheres ganha a forma de um negócio. <strong>A esteira é o que vem antes da divulgação.</strong></p>
+  </div>
 
-    <div class="valor-grid">
-      <div class="valor-card">
-        <h3>Você responde no seu tempo</h3>
-        <p>Um briefing guiado, por escrito ou em áudio. Sem reunião marcada e sem parar o seu dia.</p>
-      </div>
-      <div class="valor-card">
-        <h3>A Denise desenha a sua esteira</h3>
-        <p>O produto principal, o produto de entrada e o próximo passo de cada um, com preço e formato. Você recebe pronto e decide.</p>
-      </div>
-      <div class="valor-card">
-        <h3>Apresentação em vídeo</h3>
-        <p>A Denise grava a explicação da sua esteira. Você assiste quando puder, quantas vezes quiser.</p>
-      </div>
-      <div class="valor-card">
-        <h3>30 dias de dúvidas no WhatsApp</h3>
-        <p>Um canal direto com a Denise para as dúvidas que surgirem depois do vídeo.</p>
-      </div>
+  <div class="bloco">
+    <div class="bloco-head">
+      <div class="section-label">Como funciona</div>
+      <h2>O caminho da sua consultoria</h2>
+    </div>
+    <ol class="caminho">
+      <li class="passo"><div class="num">1</div><h3>Você responde o briefing</h3><p>No seu tempo, por escrito ou em áudio. Sem reunião marcada.</p></li>
+      <li class="passo"><div class="num">2</div><h3>A Denise desenha a sua esteira</h3><p>Produto principal, produto de entrada e o próximo passo de cada um, com preço e formato.</p></li>
+      <li class="passo"><div class="num">3</div><h3>A Denise apresenta</h3><p>Em vídeo, para você assistir quando puder, junto com o mapa da esteira por escrito.</p></li>
+      <li class="passo"><div class="num">4</div><h3>Ajustes</h3><p>Você pode pedir até 2 ajustes. Se entrarem mudanças, a Denise apresenta de novo.</p></li>
+      <li class="passo"><div class="num">5</div><h3>Acompanhamento</h3><p>30 dias de acompanhamento a distância com a Denise, pelo WhatsApp.</p></li>
+    </ol>
+  </div>
+
+  <div class="bloco">
+    <div class="bloco-head">
+      <div class="section-label">Quem confia na Lumen</div>
+      <h2>Resultados que já entregamos</h2>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="lbl">Lançamentos de</div><div class="big">6 dígitos</div></div>
+      <div class="stat"><div class="lbl">Parcerias ativas há</div><div class="big">+1 ano</div></div>
+      <div class="stat"><div class="lbl">De ROI para clientes</div><div class="big">Até 5×</div></div>
+    </div>
+    <div class="clientes">
+      <div class="cliente"><div class="h">@xamanismoseteraios</div><div class="n">227k seguidores</div></div>
+      <div class="cliente"><div class="h">@felipe.rochas7</div><div class="n">31,3k seguidores</div></div>
+      <div class="cliente"><div class="h">@eucamillacunha</div><div class="n">43,6k seguidores</div></div>
+      <div class="cliente"><div class="h">@cosmoconsciencia</div><div class="n">86,6k seguidores</div></div>
+      <div class="cliente"><div class="h">@rahysa.hedjazi</div><div class="n">66,6k seguidores</div></div>
+      <div class="cliente"><div class="h">@mariananahas</div><div class="n">50,9k seguidores</div></div>
+      <div class="cliente"><div class="h">@portal_vibra</div><div class="n">42,8k seguidores</div></div>
+      <div class="cliente"><div class="h">@heart_movement_</div><div class="n">1,2k seguidores</div></div>
     </div>
   </div>
 
-  <div class="escolha">
-    <div class="section-label">Investimento</div>
-    <h2>Duas formas de fazer</h2>
-    <p>A consultoria é a mesma nas duas. Muda só se você quer conversar com a Denise ao vivo.</p>
-  </div>
-
-  <div class="models dois">
-
-    <div class="model">
+  <div class="bloco oferta">
+    <div class="bloco-head">
+      <div class="section-label">Investimento</div>
+    </div>
+    <div class="model solo">
       <div class="tag">Consultoria</div>
       <div class="name">Esteira de Produtos</div>
       <div class="resumo">Tudo no seu tempo, sem nenhuma reunião.</div>
       <ul>
         <li><span class="mark">✓</span><span><strong>Briefing guiado</strong>, por escrito ou em áudio</span></li>
         <li><span class="mark">✓</span><span><strong>Desenho da sua esteira</strong>: cada produto com propósito, preço, formato e próximo passo</span></li>
-        <li><span class="mark">✓</span><span>Mapa da esteira por escrito, para consultar sempre</span></li>
-        <li><span class="mark">✓</span><span><strong>Apresentação em vídeo</strong> gravada pela Denise</span></li>
-        <li><span class="mark">✓</span><span>30 dias de dúvidas com a Denise no WhatsApp</span></li>
-        <li><span class="mark">✓</span><span>Pronta em 7 dias úteis depois do briefing respondido</span></li>
+        <li><span class="mark">✓</span><span><strong>Apresentação em vídeo</strong> gravada pela Denise, com o mapa da esteira por escrito</span></li>
+        <li><span class="mark">✓</span><span>Até 2 ajustes, com nova apresentação se necessário</span></li>
+        <li><span class="mark">✓</span><span>30 dias de acompanhamento a distância pelo WhatsApp</span></li>
+        <li><span class="mark">✓</span><span>Apresentação em até 7 dias úteis depois do briefing respondido</span></li>
       </ul>
       <div class="preco-bloco">
-        <div class="preco"><span>R$</span>1.997</div>
-        <div class="preco-note">entrega única</div>
+        <div class="parcela">12x no cartão de</div>
+        <div class="preco"><span>R$</span>349,97</div>
+        <div class="avista">ou <strong>R$ 3.500 à vista</strong>, com desconto</div>
       </div>
     </div>
 
-    <div class="model hi">
-      <div class="tag">Com upgrade</div>
-      <div class="name">Esteira + Encontro com a Denise</div>
-      <div class="resumo">A mesma consultoria, com uma conversa ao vivo.</div>
-      <ul>
-        <li><span class="mark">✓</span><span><strong>Tudo da consultoria</strong>: briefing, desenho, mapa, vídeo e 30 dias de dúvidas</span></li>
-        <li class="destaque"><span class="mark">✦</span><span><strong>1 encontro online de 1 hora com a Denise</strong></span></li>
-        <li><span class="mark">✓</span><span>Para conversar sobre a sua esteira ao vivo e tirar as dúvidas na hora</span></li>
-      </ul>
-      <div class="preco-bloco">
-        <div class="preco"><span>R$</span>1.997</div>
-        <div class="preco-note">a consultoria</div>
-        <div class="mais">+</div>
-        <div class="pct"><span style="font-size:0.5em;color:var(--accent);font-weight:400;vertical-align:super;margin-right:4px;">R$</span>997</div>
-        <div class="pct-note">pelo encontro ao vivo</div>
+    <div class="upgrade">
+      <div>
+        <div class="t">Upgrade opcional</div>
+        <h3>Quer conversar com a Denise ao vivo?</h3>
+        <p>Acrescente à sua consultoria 1 encontro online de 1 hora com a Denise.</p>
       </div>
+      <div class="v">+ <span>R$</span>997</div>
     </div>
 
-  </div>
-
-  <div class="bonus">
-    <div class="tag">Condição especial até quinta-feira, 01/10</div>
-    <h3>Bônus de aceite: <em>+15 dias</em> de acompanhamento a distância</h3>
-    <p>Ao fechar até <strong>quinta-feira, 01/10</strong>, os 30 dias de dúvidas com a Denise pelo WhatsApp viram <strong>45 dias de acompanhamento</strong>. Vale para as duas formas.</p>
+    <div class="bonus">
+      <div class="tag">Condição especial até quinta-feira, 01/10</div>
+      <h3>Bônus de aceite: <em>+15 dias</em> de acompanhamento e <em>+1 ajuste</em></h3>
+      <p>Ao fechar até <strong>quinta-feira, 01/10</strong>, o acompanhamento passa de 30 para <strong>45 dias</strong> e você pode pedir <strong>3 ajustes</strong> em vez de 2.</p>
+    </div>
   </div>
 
   <p class="fine">A consultoria desenha a esteira. Criar os produtos, produzir conteúdo, página de vendas, copies e tráfego pago não fazem parte desta entrega.</p>
