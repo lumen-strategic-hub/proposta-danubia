@@ -193,6 +193,8 @@
     background: var(--bg); border: 1px solid var(--accent); color: var(--accent);
     font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600;
   }
+  .passo .prazo { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+  .nota-prazo { font-size: 12px; color: var(--text-muted); text-align: center; margin-top: 22px; }
   .passo h3 { font-family: 'Cormorant Garamond', serif; font-size: 19px; font-weight: 600; color: var(--white); line-height: 1.25; margin-bottom: 8px; }
   .passo p { font-size: 12.5px; color: var(--text-soft); line-height: 1.6; }
 
@@ -233,7 +235,7 @@
     .caminho { grid-template-columns: 1fr; gap: 0; }
     .caminho::before { top: 22px; bottom: 22px; left: 21px; right: auto; width: 1px; height: auto; }
     .passo { text-align: left; display: grid; grid-template-columns: 44px 1fr; column-gap: 16px; padding-bottom: 22px; }
-    .passo .num { margin: 0; grid-row: span 2; }
+    .passo .num { margin: 0; grid-row: span 3; }
     .stats { grid-template-columns: 1fr; }
     .clientes { grid-template-columns: 1fr 1fr; }
     .upgrade { flex-direction: column; align-items: flex-start; }
@@ -251,7 +253,7 @@
   <div class="header">
     <div class="brand">Lumen Strategic Hub</div>
     <h1>Consultoria de <em>Esteira</em> de Produtos</h1>
-    <p class="subtitle">Para a Danubia. O desenho do seu negócio, apresentado em até 7 dias úteis, sem precisar parar a sua agenda.</p>
+    <p class="subtitle">Para a Danubia. O desenho do seu negócio, feito no seu tempo, sem precisar parar a sua agenda.</p>
   </div>
 
   <div class="valor">
@@ -261,15 +263,16 @@
   <div class="bloco">
     <div class="bloco-head">
       <div class="section-label">Como funciona</div>
-      <h2>O caminho da sua consultoria</h2>
+      <h2>O caminho e os prazos da sua consultoria</h2>
     </div>
     <ol class="caminho">
-      <li class="passo"><div class="num">1</div><h3>Você responde o briefing</h3><p>No seu tempo, por escrito ou em áudio. Sem reunião marcada.</p></li>
-      <li class="passo"><div class="num">2</div><h3>A Denise desenha a sua esteira</h3><p>Produto principal, produto de entrada e o próximo passo de cada um, com preço e formato.</p></li>
-      <li class="passo"><div class="num">3</div><h3>A Denise apresenta</h3><p>Em vídeo, para você assistir quando puder, junto com o mapa da esteira por escrito.</p></li>
-      <li class="passo"><div class="num">4</div><h3>Ajustes</h3><p>Você pode pedir até 2 ajustes. Se entrarem mudanças, a Denise apresenta de novo.</p></li>
-      <li class="passo"><div class="num">5</div><h3>Acompanhamento</h3><p>30 dias de acompanhamento a distância com a Denise, pelo WhatsApp.</p></li>
+      <li class="passo"><div class="num">1</div><div class="prazo">13/10</div><h3>Você recebe o briefing</h3><p>E responde no seu tempo, por escrito ou em áudio. Sem reunião marcada.</p></li>
+      <li class="passo"><div class="num">2</div><div class="prazo">+ 2 dias úteis</div><h3>Briefing validado</h3><p>Conferimos as suas respostas e pedimos o que faltar.</p></li>
+      <li class="passo"><div class="num">3</div><div class="prazo">+ 10 dias úteis</div><h3>A Denise desenha e apresenta</h3><p>A sua esteira em vídeo, com o mapa da esteira por escrito.</p></li>
+      <li class="passo"><div class="num">4</div><div class="prazo">+ 5 dias úteis</div><h3>Ajustes</h3><p>Você pede até 2 ajustes. Se entrarem mudanças, a Denise apresenta de novo em até 5 dias úteis.</p></li>
+      <li class="passo"><div class="num">5</div><div class="prazo">30 dias</div><h3>Acompanhamento</h3><p>Acompanhamento a distância com a Denise pelo WhatsApp, a partir da apresentação.</p></li>
     </ol>
+    <p class="nota-prazo">Os prazos contam a partir do briefing respondido e ficam pausados enquanto a etapa estiver com você.</p>
   </div>
 
   <div class="bloco">
@@ -315,7 +318,7 @@
         <li><span class="mark">✓</span><span><strong>Apresentação em vídeo</strong> gravada pela Denise, com o mapa da esteira por escrito</span></li>
         <li><span class="mark">✓</span><span>Até 2 ajustes, com nova apresentação se necessário</span></li>
         <li><span class="mark">✓</span><span>30 dias de acompanhamento a distância pelo WhatsApp</span></li>
-        <li><span class="mark">✓</span><span>Apresentação em até 7 dias úteis depois do briefing respondido</span></li>
+        <li><span class="mark">✓</span><span>Início em 13/10, com cronograma em dias úteis</span></li>
       </ul>
       <div class="preco-bloco">
         <div class="parcela">12x no cartão de</div>
